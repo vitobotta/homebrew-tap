@@ -1,7 +1,7 @@
 class HetznerK3s < Formula
   desc "This is a CLI tool to quickly create and manage Kubernetes clusters in Hetzner Cloud using the lightweight Kubernetes distribution k3s from Rancher."
   homepage "https://github.com/vitobotta/hetzner-k3s"
-  version "0.6.2"
+  version "0.6.1"
   license "MIT"
 
   on_macos do
@@ -19,17 +19,6 @@ class HetznerK3s < Formula
 
       def install
         bin.install "hetzner-k3s-mac-amd64" => "hetzner-k3s"
-      end
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.1/hetzner-k3s-linux-x86_64", using: :curl
-      sha256 "d23546ace7fbee88905fa025a2efa9990088b2f1ad5fd076ad5aea9371d8652b"
-
-      def install
-        bin.install "hetzner-k3s-linux-x86_64" => "hetzner-k3s"
       end
     end
   end
