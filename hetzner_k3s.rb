@@ -6,7 +6,7 @@ class HetznerK3s < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.2/hetzner-k3s-mac-arm64', using: :curl
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.3/hetzner-k3s-mac-arm64', using: :curl
       sha256 '88ce477b91912c594d868b61f1c9c92e9e9d5b27688cd1c9009a445642aa2e8b'
 
       def install
@@ -14,7 +14,7 @@ class HetznerK3s < Formula
       end
     end
     if Hardware::CPU.intel?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.2/hetzner-k3s-mac-amd64', using: :curl
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.3/hetzner-k3s-mac-amd64', using: :curl
       sha256 '1d3dbbe7ee89d005ccb940822320d0bb74537e11d48fa10c2e26bf81b44418b5'
 
       def install
