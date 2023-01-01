@@ -1,7 +1,7 @@
 class HetznerK3s < Formula
   desc 'This is a CLI tool to quickly create and manage Kubernetes clusters in Hetzner Cloud using the lightweight Kubernetes distribution k3s from Rancher.'
   homepage 'https://github.com/vitobotta/hetzner-k3s'
-  version '0.6.5'
+  version '0.6.6'
   license 'MIT'
 
   on_macos do
