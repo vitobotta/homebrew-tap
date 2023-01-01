@@ -6,20 +6,29 @@ class HetznerK3s < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.5/hetzner-k3s-mac-arm64', using: :curl
-      sha256 '42121854ffc7fcc8994415b15d4be34534bec299c9aeaf56009d171feab96af6'
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.6/hetzner-k3s-mac-arm64', using: :curl
+      sha256 '1b7a3034719935bfa935cbb1d2793e228d31e87719a6310d37d18467a861f8ad'
 
       def install
         bin.install 'hetzner-k3s-mac-arm64' => 'hetzner-k3s'
       end
     end
     if Hardware::CPU.intel?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.5/hetzner-k3s-mac-amd64', using: :curl
-      sha256 '4229266f81f18ae6f18b4946e0d46f03473870751d1e70126df4d2d32c6999e2'
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.6/hetzner-k3s-mac-amd64', using: :curl
+      sha256 '9a01d4b76c7749f4e0e9654f70c119f31031456a2db8af4a0041ea5627bfe4b4'
 
       def install
         bin.install 'hetzner-k3s-mac-amd64' => 'hetzner-k3s'
       end
+    end
+  end
+
+  on_linux do
+    url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.6/hetzner-k3s-linux-x86_64', using: :curl
+    sha256 '29a1f56fc566397d9b6e0fabfcf7628e48d5f7193187af2b0c5ccb5cdd7ab1d6'
+
+    def install
+      bin.install 'hetzner-k3s-linux-x86_64' => 'hetzner-k3s'
     end
   end
 end
