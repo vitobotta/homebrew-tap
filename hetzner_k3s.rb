@@ -4,6 +4,11 @@ class HetznerK3s < Formula
   version '0.6.9'
   license 'MIT'
 
+  depends_on "libssh2"
+  depends_on "libevent"
+  depends_on "bdw-gc"
+  depends_on "libyaml"
+
   on_macos do
     if Hardware::CPU.arm?
       url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.9/hetzner-k3s-mac-arm64', using: :curl
@@ -20,15 +25,6 @@ class HetznerK3s < Formula
       def install
         bin.install 'hetzner-k3s-mac-amd64' => 'hetzner-k3s'
       end
-    end
-  end
-
-  on_linux do
-    url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v0.6.9/hetzner-k3s-linux-x86_64', using: :curl
-    sha256 '43f1ff955e9ece66f51452c5fb39a1ef319f459ca4278c386ed7e6aeae41048c'
-
-    def install
-      bin.install 'hetzner-k3s-linux-x86_64' => 'hetzner-k3s'
     end
   end
 end
