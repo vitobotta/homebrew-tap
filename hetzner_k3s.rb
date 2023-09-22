@@ -18,7 +18,7 @@ class HetznerK3s < Formula
       sha256 '456bd88efbc42a44b44e431b1351d187555d08ddaebe4af2be7009624eb3d2c4'
 
       def install
-        bin.install 'hetzner-k3s-mac-arm64' => 'hetzner-k3s'
+        bin.install 'hetzner-k3s-macos-arm64' => 'hetzner-k3s'
       end
     end
     if Hardware::CPU.intel?
@@ -26,7 +26,7 @@ class HetznerK3s < Formula
       sha256 '892fd881e5c41a416c1e6cb8c313e919b28bea0e6405b627d534aa3873cc3611'
 
       def install
-        bin.install 'hetzner-k3s-mac-amd64' => 'hetzner-k3s'
+        bin.install 'hetzner-k3s-macos-amd64' => 'hetzner-k3s'
       end
     end
   end
