@@ -10,7 +10,7 @@ class HetznerK3s < Formula
   depends_on "libyaml"
   depends_on "pcre"
   depends_on "gmp"
-  depends_on "openssl@1.1"
+  depends_on "openssl"
 
   on_macos do
     if Hardware::CPU.arm?
