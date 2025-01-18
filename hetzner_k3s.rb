@@ -8,7 +8,7 @@ class HetznerK3s < Formula
   depends_on "libevent"
   depends_on "bdw-gc"
   depends_on "libyaml"
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "gmp"
   depends_on "openssl"
 
