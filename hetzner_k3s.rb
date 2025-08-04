@@ -1,7 +1,7 @@
 class HetznerK3s < Formula
   desc 'This is a CLI tool to quickly create and manage Kubernetes clusters in Hetzner Cloud using the lightweight Kubernetes distribution k3s from Rancher.'
   homepage 'https://github.com/vitobotta/hetzner-k3s'
-  version '2.3.7'
+  version '2.3.8'
   license 'MIT'
 
   depends_on "libevent"
@@ -13,16 +13,16 @@ class HetznerK3s < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.3.7/hetzner-k3s-macos-arm64', using: :curl
-      sha256 'f7a926f8631bf3f45ec015ed627594c6e1e6a91d15b26b5b8aa0d1531ac0e274'
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.3.8/hetzner-k3s-macos-arm64', using: :curl
+      sha256 '03f5bcfc9384664db5a679a5d05a6e84569f446d4c0924ce961bb24b88ca31da'
 
       def install
         bin.install 'hetzner-k3s-macos-arm64' => 'hetzner-k3s'
       end
     end
     if Hardware::CPU.intel?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.3.7/hetzner-k3s-macos-amd64', using: :curl
-      sha256 '3bbb559af12fc9f2b28f5e5fe120cc3d1a17f464e541a188d79bd28f2174ebbb'
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.3.8/hetzner-k3s-macos-amd64', using: :curl
+      sha256 'cfc4679bf0d95048ba88ad16ccdc472761682916a8a04c830baa4ffdbc289e1c'
 
       def install
         bin.install 'hetzner-k3s-macos-amd64' => 'hetzner-k3s'
