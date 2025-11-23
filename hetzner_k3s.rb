@@ -29,4 +29,23 @@ class HetznerK3s < Formula
       end
     end
   end
+
+  on_linux do
+    if Hardware::CPU.arm?
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.2/hetzner-k3s-linux-arm64', using: :curl
+      sha256 '7d648f2835fecdc0b23b2b7ce25408723094897c167f6458626eb5e0bab2fc5f'
+
+      def install
+        bin.install 'hetzner-k3s-linux-arm64' => 'hetzner-k3s'
+      end
+    end
+    if Hardware::CPU.intel?
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.2/hetzner-k3s-linux-amd64', using: :curl
+      sha256 'df9b1bf4e68ee50fd52ecbc6a0228b7202cf3c40e842355fecc2dcb15569aa12'
+
+      def install
+        bin.install 'hetzner-k3s-linux-amd64' => 'hetzner-k3s'
+      end
+    end
+  end
 end
