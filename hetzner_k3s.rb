@@ -1,7 +1,7 @@
 class HetznerK3s < Formula
   desc 'This is a CLI tool to quickly create and manage Kubernetes clusters in Hetzner Cloud using the lightweight Kubernetes distribution k3s from Rancher.'
   homepage 'https://github.com/vitobotta/hetzner-k3s'
-  version '2.4.2'
+  version '2.4.3'
   license 'MIT'
 
   depends_on "libevent"
@@ -13,19 +13,38 @@ class HetznerK3s < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.2/hetzner-k3s-macos-arm64', using: :curl
-      sha256 '4e3a7340dd9107fd10461510d4c14d25d7c55bf4e531563d19fb0b6e29ef9b48'
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.3/hetzner-k3s-macos-arm64', using: :curl
+      sha256 '7e789bbc37c6e63bc950da10462ba8e29cfb1a630b117f43843d2960a6c73058'
 
       def install
         bin.install 'hetzner-k3s-macos-arm64' => 'hetzner-k3s'
       end
     end
     if Hardware::CPU.intel?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.2/hetzner-k3s-macos-amd64', using: :curl
-      sha256 'e761e5ac0855770ab2e87d95bef1962a98bdb3709e5539a05cb3b4c67557f6ef'
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.3/hetzner-k3s-macos-amd64', using: :curl
+      sha256 '2c96161e975bd1154ab35b72e3704206669906568d76c3dfe9387969b579bc7c'
 
       def install
         bin.install 'hetzner-k3s-macos-amd64' => 'hetzner-k3s'
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.arm?
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.3/hetzner-k3s-linux-arm64', using: :curl
+      sha256 'd4465b1ee9df0ed48b98b4cbae2a1f346cf764d4376ef542877677be6ff06954'
+
+      def install
+        bin.install 'hetzner-k3s-linux-arm64' => 'hetzner-k3s'
+      end
+    end
+    if Hardware::CPU.intel?
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.3/hetzner-k3s-linux-amd64', using: :curl
+      sha256 '58ad7ffc6e7c620b94e125a3466cd336e618e184d2d2474e683dcb29bbb6b7f9'
+
+      def install
+        bin.install 'hetzner-k3s-linux-amd64' => 'hetzner-k3s'
       end
     end
   end
