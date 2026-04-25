@@ -1,7 +1,7 @@
 class HetznerK3s < Formula
   desc 'This is a CLI tool to quickly create and manage Kubernetes clusters in Hetzner Cloud using the lightweight Kubernetes distribution k3s from Rancher.'
   homepage 'https://github.com/vitobotta/hetzner-k3s'
-  version '2.4.8'
+  version '2.4.9'
   license 'MIT'
 
   depends_on "libevent"
@@ -13,16 +13,16 @@ class HetznerK3s < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.8/hetzner-k3s-macos-arm64', using: :curl
-      sha256 'a1b209472ac9566081c417ac01b138d200e4b64818b664a89c2a4733c7e5e5ef'
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.9/hetzner-k3s-macos-arm64', using: :curl
+      sha256 '8cbdcdaf1b38c2745881fd680e25433e4bb4c1ead2f7f9c92ac3836cc86f930d'
 
       def install
         bin.install 'hetzner-k3s-macos-arm64' => 'hetzner-k3s'
       end
     end
     if Hardware::CPU.intel?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.8/hetzner-k3s-macos-amd64', using: :curl
-      sha256 'd021c7248e0da23d3e44148ef6d3457792ba0cb17c6ede5574fc4116da0ae021'
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.9/hetzner-k3s-macos-amd64', using: :curl
+      sha256 '8cfdc4a721747e80e359bbd95165830733ba0cc6216f3ead6034cd292e2ef40c'
 
       def install
         bin.install 'hetzner-k3s-macos-amd64' => 'hetzner-k3s'
@@ -32,16 +32,16 @@ class HetznerK3s < Formula
 
   on_linux do
     if Hardware::CPU.arm?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.8/hetzner-k3s-linux-arm64', using: :curl
-      sha256 '6f69f37ecdfceac87ea51810b6ef4cb527973d2d948cf98b0b5599639fac0687'
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.9/hetzner-k3s-linux-arm64', using: :curl
+      sha256 'a256238e44fe3271f944e127bb096983aa0d8158c4b71e955bf0c272efff4e19'
 
       def install
         bin.install 'hetzner-k3s-linux-arm64' => 'hetzner-k3s'
       end
     end
     if Hardware::CPU.intel?
-      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.8/hetzner-k3s-linux-amd64', using: :curl
-      sha256 'a6c03ad2638261209f2eb8bd040a4c6dca0b78343ff5a096686e0683ef22cf36'
+      url 'https://github.com/vitobotta/hetzner-k3s/releases/download/v2.4.9/hetzner-k3s-linux-amd64', using: :curl
+      sha256 'b8f1df74271d5e7f14694df427df03a350d8a53dcf654b4b3180ba1feefa14a3'
 
       def install
         bin.install 'hetzner-k3s-linux-amd64' => 'hetzner-k3s'
